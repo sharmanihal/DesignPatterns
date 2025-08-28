@@ -5,7 +5,9 @@
 The **Strategy Pattern** is a behavioral design pattern that enables selecting an algorithm’s behavior at runtime. Instead of implementing a single behavior directly in a class (leading to duplication and rigidity), the behavior is encapsulated in separate **strategy classes** and injected into the context class using **composition**.
 
 It follows the principle:
+
 👉 **Favor composition over inheritance**
+
 👉 **Encapsulate what varies**
 
 ---
@@ -167,17 +169,17 @@ public class StrategyPatternDemo {
   | + quack(): void   |    | + quack(): void   |
   +-------------------+    +-------------------+
 
-                +--------------------------+
-                |          Duck            |
-                |--------------------------|
-                | - flyBehavior: FlyBehavior
-                | - quackBehavior: QuackBehavior
-                |--------------------------|
-                | + performFly(): void     |
-                | + performQuack(): void   |
-                | + setFlyBehavior(fb)     |
-                | + setQuackBehavior(qb)   |
-                +--------------------------+
+                +---------------------------------+
+                |              Duck               |
+                |---------------------------------|
+                | - flyBehavior: FlyBehavior      |
+                | - quackBehavior: QuackBehavior  |
+                |---------------------------------|
+                | + performFly(): void            |
+                | + performQuack(): void          |
+                | + setFlyBehavior(fb)            |
+                | + setQuackBehavior(qb)          |
+                +---------------------------------+
 ```
 
 ---
