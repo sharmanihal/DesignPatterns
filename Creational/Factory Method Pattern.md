@@ -132,7 +132,7 @@ public class Main {
 }
 ```
 
-**Note on "Simple Factory":** A "Simple Factory" is often just a single concrete creator class without the abstract `Creator` interface. While it helps encapsulate creation logic, it is not considered a true design pattern because it misses the key benefit of polymorphism—the ability to swap out different factory implementations.
+* **Note on "Simple Factory":** A "Simple Factory" is often just a single concrete creator class without the abstract `Creator` interface. While it helps encapsulate creation logic, it is not considered a true design pattern because it misses the key benefit of polymorphism—the ability to swap out different factory implementations.
 Simple Factory Pattern, you typically return the concrete product instead of the parent product type.
 -----
 
