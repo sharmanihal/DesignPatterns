@@ -84,9 +84,56 @@ classDiagram
   * **ConcreteProduct (`Dog`, `Cat`):** The actual classes that implement the `Product` interface. These are the objects we want to instantiate.
   * **Creator (`AnimalFactory`):** An abstract class or interface that declares the "factory method" (e.g., `createAnimal()`). This method's return type is the `Product` interface.
   * **ConcreteCreator (`RandomAnimalFactory`):** The class that implements the factory method. It contains the specific logic to decide which `ConcreteProduct` to instantiate and return.
+    
+```java
+// Product interface
+interface Product {
+    void use();
+}
+
+// Concrete Products
+class ProductA implements Product {
+    public void use() {
+        System.out.println("Using Product A");
+    }
+}
+
+class ProductB implements Product {
+    public void use() {
+        System.out.println("Using Product B");
+    }
+}
+
+// Factory interface
+interface Factory {
+    Product createProduct();
+}
+
+// Concrete Factories
+class FactoryA implements Factory {
+    public Product createProduct() {
+        return new ProductA();  // returns Product reference
+    }
+}
+
+class FactoryB implements Factory {
+    public Product createProduct() {
+        return new ProductB();
+    }
+}
+
+// Client
+public class Main {
+    public static void main(String[] args) {
+        Factory factory = new FactoryA();  // choose factory
+        Product product = factory.createProduct(); // returns Product ref
+        product.use(); // works polymorphically
+    }
+}
+```
 
 **Note on "Simple Factory":** A "Simple Factory" is often just a single concrete creator class without the abstract `Creator` interface. While it helps encapsulate creation logic, it is not considered a true design pattern because it misses the key benefit of polymorphism—the ability to swap out different factory implementations.
-
+Simple Factory Pattern, you typically return the concrete product instead of the parent product type.
 -----
 
 ### A More Powerful Example: Game Development 🚀
